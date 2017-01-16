@@ -1,2 +1,2 @@
 # devcontainer
-build a container for development, mainly vim configuration.
+build a container for development environment, mainly for vim.
