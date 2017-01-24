@@ -120,7 +120,9 @@ function! NERDTree_IsValid()
     return 1
 endfunction
 
-nmap wm :WMToggle<CR>
+"nmap wm :WMToggle<CR>
+"防止winmanager空白页
+nmap wm :if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle<CR>:q<CR> endif <CR><CR>
 
 Plugin 'kien/rainbow_parentheses.vim'
 
