@@ -20,7 +20,7 @@ echo -e '[global]\ntrusted-host = pypi.douban.com\nindex-url = http://pypi.douba
 ## 创建虚拟环境
 /root/.pyenv/bin/pyenv virtualenv 3.5.2 py3
 cd /home && echo 'py3' >> .python-version
-/root/.pyenv/versions/3.5.2/envs/py3/bin/pip install pylint
+#/root/.pyenv/versions/3.5.2/envs/py3/bin/pip install pylint
 /root/.pyenv/versions/3.5.2/envs/py3/bin/pip install flake8
 
 # 复制vimrc到家目录

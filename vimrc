@@ -31,7 +31,8 @@ Plugin 'VundleVim/Vundle.vim'
 " All of your Plugins must be added before the following line
 " 自动补全神器
 Plugin 'Valloric/YouCompleteMe'
-let g:ycm_python_binary_path = '/root/.pyenv/versions/3.5.1/bin/python3'
+let g:ycm_python_binary_path = '/root/.pyenv/versions/3.5.2/bin/python3'
+let g:syntastic_python_checkers = ['flake8']
 "let g:ycm_python_binary_path = '/usr/bin/python'
 "设置error和warning的提示符，如果没有设置，ycm会以syntastic的
 "" g:syntastic_warning_symbol 和 g:syntastic_error_symbol 这两个为准
