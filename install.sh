@@ -36,5 +36,5 @@ echo "-->install vim plugins..."
 vim -c PluginInstall -c q -c q
 cd /root/.vim/bundle/YouCompleteMe/ && /root/.pyenv/versions/3.5.2/bin/python3 install.py --clang-complete
 
-echo "-->hello..."
+echo "-->finnished..."
 
