@@ -130,6 +130,8 @@ Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'nathanaelkane/vim-indent-guides'
 "自动添加括号
 Plugin 'Raimondi/delimitMate'
+let delimitMate_expand_cr = 1
+au FileType python let b:delimitMate_nesting_quotes = ['"']
 
 "批量注释
 Plugin 'scrooloose/nerdcommenter'
@@ -164,6 +166,17 @@ Plugin 'tpope/vim-surround'
 
 "ctrl+p
 Plugin 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -205,7 +218,7 @@ function MyDiff()
     else
       let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
     endif
-  
+
     let cmd = $VIMRUNTIME . '\diff'
   endif
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
