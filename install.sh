@@ -2,7 +2,8 @@
 
 # 安装相关组件
 echo "-->to be install components..."
-yum install epel-release vim git curl ctags git gcc gcc-c++ make readline readline-devel readline-staticsud openssl openssl-devel openssl-static sqlite-devel bzip2-devel bzip2-libs wget patch cmake make net-tools htop tree iftop -y
+yum install epel-release
+yum install vim git curl ctags git gcc gcc-c++ make readline readline-devel readline-staticsud openssl openssl-devel openssl-static sqlite-devel bzip2-devel bzip2-libs wget patch cmake make net-tools htop tree iftop graphviz* -y
 
 # 安装pyenv
 curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
