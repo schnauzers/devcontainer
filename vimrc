@@ -186,6 +186,9 @@ let g:ctrlp_follow_symlinks=1
 "scala
 Plugin 'derekwyatt/vim-scala'
 
+"html
+Plugin 'mattn/emmet-vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
