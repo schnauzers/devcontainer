@@ -38,6 +38,16 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_python_binary_path = '/root/.pyenv/versions/3.5.2/bin/python3'
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"let g:syntastic_javascript_checkers = ['standard']
+"let g:syntastic_javascript_standard_generic = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint'
+
+
 "let g:ycm_python_binary_path = '/usr/bin/python'
 "设置error和warning的提示符，如果没有设置，ycm会以syntastic的
 "" g:syntastic_warning_symbol 和 g:syntastic_error_symbol 这两个为准

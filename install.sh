@@ -37,5 +37,19 @@ echo "-->install vim plugins..."
 vim -c PluginInstall -c q -c q
 cd /root/.vim/bundle/YouCompleteMe/ && /root/.pyenv/versions/3.5.2/bin/python3 install.py --clang-complete
 
+# 安装javascript语法检查
+npm install -g eslint
+cd /home
+eslint --init
+# 修改如下配置
+#    "env": {
+        #"browser": true,
+        #"es6": true,
+		#"jquery": true
+    #},
+        #"indent": [
+            #"error",
+            #2
+
 echo "-->finnished..."
 
