@@ -38,10 +38,28 @@ vim -c PluginInstall -c q -c q
 cd /root/.vim/bundle/YouCompleteMe/ && /root/.pyenv/versions/3.5.2/bin/python3 install.py --clang-complete
 
 # 安装javascript语法检查
+# 可以选择jshint或者eslint
+npm install -g jshint
 npm install -g eslint
 cd /home
 eslint --init
-# 修改如下配置
+# 如果使用jshint，可以在项目中新建.jshintrc文件，内容如下：
+#{
+  #"esversion": 6,
+  #"curly": true,
+  #"eqeqeq": true,
+  #"eqnull": true,
+  #"expr": true,
+  #"latedef": true,
+  #"onevar": true,
+  #"noarg": true,
+  #"node": true,
+  #"trailing": true,
+  #"undef": true,
+  #"unused": true
+#}
+
+# 如果使用eslint,修改如下配置
 #    "env": {
         #"browser": true,
         #"es6": true,
