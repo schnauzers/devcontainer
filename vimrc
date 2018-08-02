@@ -6,6 +6,7 @@ let mapleader = ";"
 map <f9> :w<CR>:!dot -Tpng -o %:r.png %<CR><CR>
 map <f10> :w<CR>:!dot -Tsvg -o %:r.svg %<CR><CR>
 map <f11> :w<CR>:!rm -f %:r.svg<CR><CR>:!dot -Tsvg -o %:r.svg %<CR><CR>
+map <f5> :w<CR>:!./movetoserver.sh <CR><CR>
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -36,8 +37,8 @@ Plugin 'VundleVim/Vundle.vim'
 " All of your Plugins must be added before the following line
 " 自动补全神器
 Plugin 'Valloric/YouCompleteMe'
-let g:ycm_python_binary_path = '/root/.pyenv/versions/3.5.2/bin/python3'
-let g:syntastic_python_checkers = ['flake8']
+let g:ycm_python_binary_path = '/root/.pyenv/versions/3.6.3/bin/python3'
+"let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -153,7 +154,7 @@ Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'https://github.com/scrooloose/syntastic'
 
-let g:syntastic_python_python_exec = '/root/.pyenv/versions/3.5.2/bin/python3'
+let g:syntastic_python_python_exec = '/root/.pyenv/versions/3.6.3/bin/python3'
 "let g:syntastic_python_python_exec = '/usr/bin/python'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -318,7 +319,10 @@ set incsearch
 set ignorecase
 
 "2.120 代码折叠
+"set foldenable
 "set foldmethod=syntax
+"默认不打开折叠
+"set foldlevel=99
 
 " 总是显示状态栏
 set laststatus=2
@@ -367,3 +371,9 @@ match WhitespaceEOL /\s\+$/
 set listchars=tab:>-,trail:-
 
 set mouse=c
+set sw=4
+set ts=4
+filetype indent on
+autocmd FileType c setlocal et sta sw=4 sts=4
+autocmd FileType python setlocal et sta sw=4 sts=4
+autocmd FileType javascript setlocal et sta sw=4 sts=4
