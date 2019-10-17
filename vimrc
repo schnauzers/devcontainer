@@ -7,6 +7,7 @@ map <f9> :w<CR>:!dot -Tpng -o %:r.png %<CR><CR>
 map <f10> :w<CR>:!dot -Tsvg -o %:r.svg %<CR><CR>
 map <f11> :w<CR>:!rm -f %:r.svg<CR><CR>:!dot -Tsvg -o %:r.svg %<CR><CR>
 map <f5> :w<CR>:!./movetoserver.sh <CR><CR>
+autocmd FileType python noremap <buffer> <F1> :call Autopep8()<CR>
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -35,6 +36,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 "
 " All of your Plugins must be added before the following line
+
+" 自动格式化PEP8标准
+Plugin 'tell-k/vim-autopep8'
+
 " 自动补全神器
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_python_binary_path = '/root/.pyenv/versions/3.6.3/bin/python3'

@@ -23,6 +23,8 @@ echo -e '[global]\ntrusted-host = pypi.douban.com\nindex-url = http://pypi.douba
 cd /home && echo 'py3' >> .python-version
 #/root/.pyenv/versions/3.5.2/envs/py3/bin/pip install pylint
 /root/.pyenv/versions/3.5.2/envs/py3/bin/pip install flake8
+/root/.pyenv/versions/3.5.2/envs/py3/bin/pip install autopep8
+
 
 # 复制vimrc到家目录
 # echo "-->move vimrc to location..."
