@@ -382,3 +382,9 @@ filetype indent on
 autocmd FileType c setlocal et sta sw=4 sts=4
 autocmd FileType python setlocal et sta sw=4 sts=4
 autocmd FileType javascript setlocal et sta sw=4 sts=4
+
+"代码折叠
+"按缩进进行折叠
+set foldmethod=indent
+"默认不折叠
+set foldlevelstart=99
