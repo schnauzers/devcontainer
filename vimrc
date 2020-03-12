@@ -37,6 +37,7 @@ Plugin 'VundleVim/Vundle.vim'
 "
 " All of your Plugins must be added before the following line
 
+
 " 自动格式化PEP8标准
 Plugin 'tell-k/vim-autopep8'
 
@@ -358,7 +359,7 @@ au BufNewFile,BufRead *.py
 \ set tabstop=4 |
 \ set softtabstop=4 |
 \ set shiftwidth=4 |
-\ set textwidth=79 |
+"\ set textwidth=78 |
 \ set expandtab |
 \ set autoindent |
 \ set fileformat=unix |
