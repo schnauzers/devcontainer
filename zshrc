@@ -92,7 +92,11 @@ bindkey ',' autosuggest-accept
 # ./install.py
 # if run on Mac:
 # brew install autojump
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+
+# uncomment next on Fedora
+#[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+# uncomment next on Mac
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 
 # -------->>>>>>>>>>>>>zsh-syntax-highlighting
@@ -136,4 +140,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-source ~/.bashrc
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/
+
+# For compilers to find zlib you may need to set:
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include -I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
+#LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib "
+#CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
+
+# For pkg-config to find zlib you may need to set:
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
+
+alias ll='ls -alF'
+alias ls='ls -A'
+alias l='ls -CF'
