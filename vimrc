@@ -43,7 +43,7 @@ Plugin 'tell-k/vim-autopep8'
 
 " 自动补全神器
 Plugin 'Valloric/YouCompleteMe'
-let g:ycm_python_binary_path = '/root/.pyenv/versions/3.6.3/bin/python3'
+let g:ycm_python_binary_path = '/usr/bin/python'
 "let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -160,7 +160,7 @@ Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'https://github.com/scrooloose/syntastic'
 
-let g:syntastic_python_python_exec = '/root/.pyenv/versions/3.6.3/bin/python3'
+let g:syntastic_python_python_exec = '/usr/bin/python'
 "let g:syntastic_python_python_exec = '/usr/bin/python'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -346,6 +346,10 @@ hi CursorColumn cterm=none ctermbg=black
 "highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
 highlight Pmenu ctermfg=86 ctermbg=8 guifg=#ffffff guibg=#000000
 
+" 发生错误时的着色策略
+hi SpellBad cterm=underline ctermfg=red ctermbg=NONE
+
+
 " 高亮显示搜索结果
 set hlsearch
 
@@ -389,3 +393,5 @@ autocmd FileType javascript setlocal et sta sw=4 sts=4
 set foldmethod=indent
 "默认不折叠
 set foldlevelstart=99
+
+"set shell="/bin/zsh"
