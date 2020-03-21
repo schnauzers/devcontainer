@@ -37,6 +37,8 @@ Plugin 'VundleVim/Vundle.vim'
 "
 " All of your Plugins must be added before the following line
 
+" 保存会话
+Plugin 'tpope/vim-obsession'
 
 " 自动格式化PEP8标准
 Plugin 'tell-k/vim-autopep8'
