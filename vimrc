@@ -394,6 +394,13 @@ autocmd FileType javascript setlocal et sta sw=4 sts=4
 "按缩进进行折叠
 set foldmethod=indent
 "默认不折叠
-set foldlevelstart=99
+"set foldlevelstart=99
 
 "set shell="/bin/zsh"
+
+"disable CapsLock
+" Execute 'lnoremap x X' and 'lnoremap X x' for each letter a-z.
+for c in range(char2nr('A'), char2nr('Z'))
+  execute 'lnoremap ' . nr2char(c+32) . ' ' . nr2char(c)
+  execute 'lnoremap ' . nr2char(c) . ' ' . nr2char(c+32)
+endfor
