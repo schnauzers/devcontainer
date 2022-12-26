@@ -74,6 +74,9 @@ Plug 'vim-airline/vim-airline-themes'
 " 语法高亮插件
 Plug 'sheerun/vim-polyglot'
 
+" lint插件
+Plug 'dense-analysis/ale'
+
 call plug#end()
 " ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
@@ -120,7 +123,7 @@ set cursorcolumn
 " ——————————————————————————————————————————————————————————————————————————
 " >>>>>>>>>> skywind300/vim-dict相关配置，具体参考https://github.com/altercation/vim-colors-solarized <<<<<<<<<<
 " 设定需要生效的文件类型，如果是 "*" 的话，代表所有类型
-let g:apc_enable_ft = {'vim': 1, 'text':1, 'markdown':1, 'php':1}
+let g:apc_enable_ft = {'vim': 1, 'text':1, 'markdown':1, 'php':1, 'python':1}
 " let g:apc_enable_ft = "*"
 " autocmd BufEnter ApcEnable
 " let g:apc_enable_ft = {'py':1}
@@ -145,3 +148,15 @@ let g:airline_powerline_fonts = 1
 
 "设置为双字宽显示，否则无法完整显示如:☆
 set ambiwidth=double
+
+
+
+" ——————————————————————————————————————————————————————————————————————————
+" >>>>>>>>>> dense-analysis/ale相关配置，具体参考https://github.com/dense-analysis/ale  <<<<<<<<<<
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\}
+
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
