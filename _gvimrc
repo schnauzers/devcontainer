@@ -1,0 +1,147 @@
+" 设置leader key
+let mapleader = ";"
+
+" 不考虑和VI兼容
+set nocompatible
+
+" 打开语法高亮
+syntax enable
+
+" 提示当前是命令模式还是插入模式
+set showmode
+
+" 右下角显示当前输入的命令
+set showcmd
+
+" 支持使用鼠标
+set mouse=a
+
+" 使用UTF-8编码
+set encoding=utf-8
+
+" 使用256色
+set t_Co=256
+
+" 显示行号
+set number
+" 显示相对行号
+set relativenumber
+
+" 打开文件类型检测功能
+" 参考链接：https://blog.easwy.com/archives/advanced-vim-skills-filetype-on/
+filetype plugin indent on
+
+" 设置英文字体
+set guifont=Consolas:h14:cANSI
+
+" 设置中文字体
+set guifontwide=KaiTi:h14
+
+" 指定窗口尺寸，全屏打开gvim
+" 参考链接：https://vi.stackexchange.com/questions/1937/how-do-i-get-gvim-to-start-maximised-in-windows
+autocmd GUIEnter * simalt ~x
+
+
+" ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+" >>>>>>>>>>用vim-plug来管理插件<<<<<<<<<<
+" 使用vim-plug插件管理器，使用方法如下：https://github.com/junegunn/vim-plug#linux-flatpak
+" 简单来说，在windows下，将plug.vim下载到vimfiles/autoload文件夹下
+call plug#begin()
+" 如果手动下载，直接将插件git clone到vimfiles/plugged目录下
+" 注释插件
+Plug 'preservim/nerdcommenter'
+
+" 文件管理器插件
+Plug 'preservim/nerdtree'
+
+" solarized主题插件
+ Plug 'altercation/vim-colors-solarized'
+
+" 自动补全插件
+Plug 'skywind3000/vim-auto-popmenu'
+Plug 'skywind3000/vim-dict'
+
+" 路径搜索插件
+Plug 'ctrlpvim/ctrlp.vim'
+
+" Python pep8检查, 需要安装对应的Python包：pip install autopep8
+Plug 'tell-k/vim-autopep8'
+
+" 主题优化插件
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" 语法高亮插件
+Plug 'sheerun/vim-polyglot'
+
+call plug#end()
+" ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+
+" ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+" >>>>>>>>>> preservim/nerdcommenter相关配置, 具体参考https://github.com/preservim/nerdcommenter <<<<<<<<<<
+" 注释符后添加空格
+let g:NERDSpaceDelims = 1
+
+" 将逐行注释定界符向左对齐，而不是遵循代码缩进
+let g:NERDDefaultAlign = 'left'
+
+" 选择python注释符作为默认
+let g:NERDAltDelims_python = 1
+
+" 允许注释和反转空行(块注释时会有用) 
+let g:NERDCommentEmptyLines = 1
+
+" 取消注释后去掉尾部的空格
+let g:NERDTrimTrailingWhitespace = 1
+
+" 设置每种语言的注释风格
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" ——————————————————————————————————————————————————————————————————————————
+
+
+" ——————————————————————————————————————————————————————————————————————————
+" >>>>>>>>>> altercation/vim-colors-solarized相关配置，具体参考https://github.com/altercation/vim-colors-solarized <<<<<<<<<<
+set background=dark
+colorscheme solarized
+
+" 注意，如下行和列的高亮均需在设置solarized主题后再配置，否则会被solarized主题的配色覆盖
+" 光标所在的当前行高亮
+set cursorline
+highlight CursorLine ctermbg=NONE ctermfg=white guibg=brown guifg=white
+
+" 光标所在的当前列高亮
+set cursorcolumn
+" highlight CursorColumn ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+" ——————————————————————————————————————————————————————————————————————————
+
+
+
+" ——————————————————————————————————————————————————————————————————————————
+" >>>>>>>>>> skywind300/vim-dict相关配置，具体参考https://github.com/altercation/vim-colors-solarized <<<<<<<<<<
+" 设定需要生效的文件类型，如果是 "*" 的话，代表所有类型
+let g:apc_enable_ft = {'vim': 1, 'text':1, 'markdown':1, 'php':1}
+" let g:apc_enable_ft = "*"
+" autocmd BufEnter ApcEnable
+" let g:apc_enable_ft = {'py':1}
+
+" 设定从字典文件以及当前打开的文件里收集补全单词，详情看 ':help cpt'
+set cpt=.,k,w,b,t
+
+" 不要自动选中第一个选项。
+set completeopt=menu,menuone,noselect
+
+" 禁止在下方显示一些啰嗦的提示
+set shortmess+=c
+
+" ——————————————————————————————————————————————————————————————————————————
+
+
+" ——————————————————————————————————————————————————————————————————————————
+" >>>>>>>>>> vim-airline/vim-airline相关配置，具体参考https://github.com/vim-airline/vim-airline <<<<<<<<<<
+let g:airline_theme="bubblegum"
+"这个是安装字体后 必须设置此项"
+let g:airline_powerline_fonts = 1
+
+"设置为双字宽显示，否则无法完整显示如:☆
+set ambiwidth=double
