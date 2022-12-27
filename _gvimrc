@@ -4,6 +4,15 @@ let mapleader = ";"
 " 不考虑和VI兼容
 set nocompatible
 
+" TAB键替换为空格
+set expandtab
+
+" 缩进设置为4个空格
+set shiftwidth=4
+
+" 编辑模式下可以利用删除键删除ident/换行/开始
+set backspace=indent,eol,start
+
 " 打开语法高亮
 syntax enable
 
@@ -29,7 +38,7 @@ set relativenumber
 
 " 打开文件类型检测功能
 " 参考链接：https://blog.easwy.com/archives/advanced-vim-skills-filetype-on/
-filetype plugin indent on
+filetype plugin on
 
 " 设置英文字体
 set guifont=Consolas:h14:cANSI
