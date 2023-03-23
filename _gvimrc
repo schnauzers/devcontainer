@@ -4,6 +4,9 @@ let mapleader = ";"
 " 不考虑和VI兼容
 set nocompatible
 
+" 搜索不区分大小写
+set ic
+
 " TAB键替换为空格
 set expandtab
 
@@ -101,7 +104,7 @@ let g:NERDDefaultAlign = 'left'
 " 选择python注释符作为默认
 let g:NERDAltDelims_python = 1
 
-" 允许注释和反转空行(块注释时会有用) 
+" 允许注释和反转空行(块注释时会有用)
 let g:NERDCommentEmptyLines = 1
 
 " 取消注释后去掉尾部的空格
@@ -169,3 +172,10 @@ let g:ale_fixers = {
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
+
+
+" ——————————————————————————————————————————————————————————————————————————
+" >>>>>>>>>> tell-k/vim-autopep8相关配置，具体参考https://github.com/tell-k/vim-autopep8  <<<<<<<<<<
+
+" 映射到F8键
+autocmd FileType python3 noremap <buffer> <F8> :call Autopep8()<CR>
