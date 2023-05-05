@@ -37,7 +37,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # 安装vim插件
 echo "-->install vim plugins..."
 vim -c PluginInstall -c q -c q
-cd /root/.vim/bundle/YouCompleteMe/ && /root/.pyenv/versions/3.5.2/bin/python3 install.py --clang-complete
+cd /root/.vim/bundle/YouCompleteMe/ && /root/.pyenv/versions/3.5.2/bin/python3 install.py --clang-complete --force-sudo
 
 # 安装javascript语法检查
 # 可以选择jshint或者eslint
