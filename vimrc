@@ -108,6 +108,8 @@ let Tlist_WinWidth = 21"
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_theme="bubblegum"
+" 解决airline重复载入的bug
+let g:airline#extensions#disable_rtp_load=1
 "这个是安装字体后 必须设置此项"
 let g:airline_powerline_fonts = 1
 
